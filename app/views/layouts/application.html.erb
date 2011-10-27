@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Name	   : Task Central
+Description: A two-column, fixed-width design with dark color scheme.
+Version	: 1.0
+Released   : 20100529
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Central de Tarefas</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><%= link_to 'Tarefas', tasks_path %></h1>
+				<p>Controle de Tarefas -- Desenvolvido em Rails</p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><%= link_to 'Index', tasks_path %></li>
+					<li><%= link_to 'Tasks', tasks_path %></li>
+					<li><%= link_to 'Categories', categories_path %></li>
+					<li><%= link_to 'Authors', authors_path %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+			<%= yield %>
+				<div style="clear: both;"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+</body>
+</html>
